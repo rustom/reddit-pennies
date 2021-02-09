@@ -18,6 +18,8 @@ def ScrapePosts(sub, keywords):
         reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, password=password, username=username, user_agent=user_agent)
 
         subreddit = reddit.subreddit(sub)
+        print(f'{username} has connected to Reddit!')
+
 
         # checks for any new post
         for submission in subreddit.new(limit=10):
