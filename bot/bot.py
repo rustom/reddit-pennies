@@ -5,7 +5,7 @@ import os
 import random
 import asyncio
 import discord
-import RedditScrape as rs
+import scrape as rs
 import psycopg2
 
 import requests
