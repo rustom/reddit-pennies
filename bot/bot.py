@@ -23,7 +23,7 @@ from time import sleep
 #keywords = [['adidas', 'ultraboost', 'uniqlo', 'nike', 'stan smith', 'a&f', 'abercrombie'], ['amazon']] #old keywords: alphabounce, vans
 channelid = 808500202109009920
 subs = ['pennystocks']
-keywords = [['OCGN', 'DD']]
+keywords = [['OCGN', 'DD', 'moon', 'invest', 'tomorrow', 'covid', 'the']]
 
 token = os.environ['DISCORDBOT_TOKEN']
 DATABASE_URL = os.environ['DATABASE_URL']
