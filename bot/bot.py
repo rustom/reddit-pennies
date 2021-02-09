@@ -21,7 +21,7 @@ from time import sleep
 
 #subs = ['frugalmalefashion', 'freebies']
 #keywords = [['adidas', 'ultraboost', 'uniqlo', 'nike', 'stan smith', 'a&f', 'abercrombie'], ['amazon']] #old keywords: alphabounce, vans
-channelid = 808500202109009920
+channelid = os.environ['DISCORD_CHANNEL_ID']
 subs = ['pennystocks']
 keywords = [['OCGN', 'DD', 'moon', 'invest', 'tomorrow', 'covid', 'the', ' ', 'trading', 'stock', 'penny']]
 
