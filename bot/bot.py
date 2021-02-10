@@ -51,3 +51,4 @@ async def scrape(sub, channel):
 # - Last 5 hours
 
 client.run(token)
+client.close()
