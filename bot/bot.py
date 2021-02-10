@@ -27,16 +27,19 @@ async def on_ready():
 
 
 async def scrape(sub, channel):
-    posts = []
+    while True:
+        try:
+            reddit = asyncpraw.Reddit(client_id=client_id, client_secret=client_secret,
+                                      password=password, username=username, user_agent=user_agent)
+            subreddit = await reddit.subreddit(sub)
 
-    reddit = asyncpraw.Reddit(client_id=client_id, client_secret=client_secret, password=password, username=username, user_agent=user_agent)
-
-    subreddit = await reddit.subreddit(sub)
-    async for submission in subreddit.stream.submissions():
-        if submission.link_flair_text == 'DD :DD:':
-            await channel.send(bar + '\n' + '[' + submission.link_flair_text + ']' + submission.title + '\n' + submission.url + '/n/n')
+            async for submission in subreddit.stream.submissions():
+                if submission.link_flair_text == 'DD :DD:':
+                    await channel.send(bar + '\n' + '[' + submission.link_flair_text + ']' + submission.title + '\n' + submission.url + '/n/n')
             
-# Criteria: 
+        except Exception as e:
+            await asyncio.sleep(30)
+# Criteria:
 # - DD flair
 # - 300 upvotes
 # - 50 comments
