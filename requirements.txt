@@ -1,9 +1,4 @@
-aiohttp==3.5.4
-alabaster==0.7.10
 discord==1.0.1
-discord.py==1.2.3
-lxml==4.4.1
-praw==7.1.4
-prawcore==1.0.1
-psycopg2-binary==2.8.3
-selenium==3.141.0
+discord.py==1.6.0
+asyncpraw==7.1.0
+asyncprawcore==1.5.1
