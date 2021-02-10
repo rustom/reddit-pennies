@@ -27,6 +27,7 @@ async def on_ready():
 
 
 async def scrape(sub, channel):
+    count = 0
     while True:
         try:
             reddit = asyncpraw.Reddit(client_id=client_id, client_secret=client_secret,
@@ -34,11 +35,15 @@ async def scrape(sub, channel):
             subreddit = await reddit.subreddit(sub)
 
             async for submission in subreddit.stream.submissions():
+                print(count, submission.title)
+                count += 1
                 if submission.link_flair_text == 'DD :DD:':
                     await channel.send(bar + '\n' + '[' + submission.link_flair_text + ']' + submission.title + '\n' + submission.url + '/n/n')
             
         except Exception as e:
             await asyncio.sleep(30)
+            print('EXCEPTION')
+
 # Criteria:
 # - DD flair
 # - 300 upvotes
