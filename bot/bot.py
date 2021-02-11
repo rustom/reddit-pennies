@@ -23,7 +23,7 @@ async def on_ready():
     channel = client.get_channel(channelID)
     await channel.send(f'{client.user} has connected to Discord on channel #{channel.name}!')
 
-    await scrape('aww', channel)
+    await scrape('pennystocks', channel)
 
 
 async def scrape(sub, channel):
