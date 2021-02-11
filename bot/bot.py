@@ -23,7 +23,7 @@ async def on_ready():
     channel = client.get_channel(channelID)
     await channel.send(f'{client.user} has connected to Discord on channel #{channel.name}!')
 
-    await scrape('pennystocks', channel)
+    await scrape('aww', channel)
 
 
 async def scrape(sub, channel):
@@ -43,6 +43,10 @@ async def scrape(sub, channel):
         except Exception as e:
             await asyncio.sleep(30)
             print('EXCEPTION')
+    print('exited')
+
+
+# Get newest 50 every 10 minutes
 
 # Criteria:
 # - DD flair
@@ -52,3 +56,4 @@ async def scrape(sub, channel):
 
 client.run(token)
 client.close()
+print('program end')
